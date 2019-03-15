@@ -24,6 +24,7 @@
     <script src="<?php echo $site_variables["template_dir"]; ?>js/libs/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="<?php echo $site_variables["template_dir"]; ?>js/libs/bootstrap.min.js"></script>
         <script src="<?php echo $site_variables["template_dir"]; ?>js/pdfcsv.js"></script>
+        <script src="<?php echo $site_variables["template_dir"]; ?>js/table2CSV.js"></script>
 	
 </head>
 
