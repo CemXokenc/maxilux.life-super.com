@@ -281,6 +281,12 @@
      $this->db->where($column_name,$id)->delete($table_name);
    }
 
+   function delete_item_hide($table_name, $column_name = 'id'){
+     $id = $this->getVariable('id');
+     $this->db = new active_records();
+       $this->db->where($column_name,$id)->update($table_name, array('hidden' => 1));
+   }
+
    function prepare_actions_list($data, $actions){
      //$actions_num = array();
      //for($z=0;$z<count($actions);$z++){

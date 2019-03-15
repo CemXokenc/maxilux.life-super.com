@@ -5,7 +5,7 @@ if($block_attr_table=="torgovye_tochki" || $block_attr_table=="clients" || $bloc
   $this->db->where("id",$item_id )->set("delete_status",1)->update($block_attr_table);
   $this->redirect($this->l($block_attr_redirect));
 }
-$this->delete_item($block_attr_table);
+$this->delete_item_hide($block_attr_table);
 if(!empty($block_attr_page)){
 $gl_session["session_data"]['system_messages'][$block_attr_page] = "Данные успешно удалены";
 }
