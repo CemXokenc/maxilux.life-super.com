@@ -220,7 +220,8 @@ else
 
 for($z=0;$z<count($zakaz_list);$z++){
 
- $zakaz_list[$z]['orders_order_date'] = date('d.m.Y H:i',strtotime($zakaz_list[$z]['orders_order_date']));
+    $zakaz_list[$z]['orders_order_time'] = date('H:i',strtotime($zakaz_list[$z]['orders_order_date']));
+    $zakaz_list[$z]['orders_order_date'] = date('d.m.Y',strtotime($zakaz_list[$z]['orders_order_date']));
 
   /*client amount*/
   $orders_summa =  $zakaz_list[$z]['orders_summa']-$zakaz_list[$z]['orders_skidka_amount'];
@@ -230,7 +231,9 @@ for($z=0;$z<count($zakaz_list);$z++){
   $orders_summa =  $zakaz_list[$z]['orders_summa']-$zakaz_list[$z]['orders_skidka_office_amount'];
   $info_office = calc_price( $orders_summa, $zakaz_list[$z]['orders_valuta'],$zakaz_list[$z]['orders_valuta']);
 
-  $zakaz_list[$z]['orders_itogo'] = $info_client['view']."<br>".$info_office['view'];
+  //$zakaz_list[$z]['orders_itogo'] = $info_client['view']."<br>".$info_office['view'];
+    $zakaz_list[$z]['orders_itogo_klient'] = $info_client['view'];
+    $zakaz_list[$z]['orders_itogo_office'] = $info_office['view'];
 
   if($gl_session["session_data"]['zakaz_valyta']==""){
     $info = calc_price($zakaz_list[$z]['orders_summa'], $zakaz_list[$z]['orders_valuta'],$zakaz_list[$z]['orders_valuta']);

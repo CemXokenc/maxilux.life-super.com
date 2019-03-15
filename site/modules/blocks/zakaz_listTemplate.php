@@ -120,6 +120,8 @@
 	<button type="submit" name="reset_filter" value = "1" class="reset_filter btn btn-info">Сбросить фильтр</button>
 	<input name="view_checked" style="margin-left: 20px;" <?php echo $site_variables["area_checked"]; ?> onchange="$('#view_removed').submit();" value="1" type="checkbox">
 	<label for="view_removed">Вывести удаленные?</label>
+    <input name="view_checked_price" style="margin-left: 20px;" <?php echo $site_variables["area_checked"]; ?> onchange="$('#view_removed_price').submit();" value="1" type="checkbox">
+    <label for="view_removed_price">Показать дилерскую цену?</label>
 
 	<input type="hidden" name="do" value = "filter2">
 </form>
@@ -138,15 +140,18 @@
 <table class="table table-bordered">
   <thead>
   <tr>
-    <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'id')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">№</a></th>
-    <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'fio')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">ФИО</a></th>
-    <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'order_date')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Время заказа</a></th>
-    <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Сумма заказа</a></th>
-	<th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'skidka_amount')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Скидка</a></th>
-	<th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa_f')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">К оплате</a></th>
-    <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'default_status')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Статус</a></th>
-    <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'torgovaya_tochka_id')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Торговая точка</a></th>
-	<th>Комментарии</th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'id')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">№</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'fio')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">ФИО</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'order_date')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Дата заказа</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'order_date')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Время заказа</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Сумма заказа</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'skidka_amount')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Скидка Клиент</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'skidka_amount')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Скидка Офис</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa_f')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">К оплате Клиент</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa_f')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">К оплате Офис</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'default_status')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Статус</a></th>
+      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'torgovaya_tochka_id')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Торговая точка</a></th>
+      <th>Комментарии</th>
     <?php if( $site_variables["session_var_zakaz_view"] == 1){ ?><th>Просмотр</th><?php } ?>
   </tr>
   </thead>
@@ -156,19 +161,19 @@
    <?php if(count($site_variables["zakaz_list"]) > 0){ ?>
  <?php   foreach($site_variables["zakaz_list"] as $zakaz_list_item){ ?>
 <tr>
-  <td><?php if( $site_variables["session_var_zakaz_view"] == 1){ ?><a href="<?php echo $zakaz_list_item["actions_list"]["order_view"]; ?>"><?php echo $zakaz_list_item["orders_nomer"]; ?></a><?php }else{ ?><?php echo $zakaz_list_item["orders_nomer"]; ?><?php } ?></td>
-  <td><?php if( $site_variables["session_var_client_view"] == 1){ ?><a href="<?php echo $zakaz_list_item["client_info_url"]; ?>"><?php echo $zakaz_list_item["clients_fio"]; ?></a><?php }else{ ?><?php echo $zakaz_list_item["clients_fio"]; ?><?php } ?></td>
-  <td><?php echo $zakaz_list_item["orders_order_date"]; ?></td>
-  <td><?php echo $zakaz_list_item["orders_summa"]; ?></td>
-  <td>
-    Клиент: <?php echo $zakaz_list_item["orders_skidka_amount"]; ?><br>
-    Офис: <?php echo $zakaz_list_item["orders_skidka_office_amount"]; ?>
-  </td>
-  <td><?php echo $zakaz_list_item["orders_itogo"]; ?></td>
-  <td style = "background-color: <?php echo $zakaz_list_item["orders_statuses_color"]; ?>;"><?php echo $zakaz_list_item["orders_statuses_name"]; ?></td>
-  <td><?php echo $zakaz_list_item["torgovye_tochki_name"]; ?></td>
-  <td style="padding: 0;display: inline-block;position: relative"><?php echo $zakaz_list_item["comment"]; ?></td>
-  <?php if( $site_variables["session_var_zakaz_view"] == 1){ ?><td>
+    <td><?php if( $site_variables["session_var_zakaz_view"] == 1){ ?><a href="<?php echo $zakaz_list_item["actions_list"]["order_view"]; ?>"><?php echo $zakaz_list_item["orders_nomer"]; ?></a><?php }else{ ?><?php echo $zakaz_list_item["orders_nomer"]; ?><?php } ?></td>
+    <td><?php if( $site_variables["session_var_client_view"] == 1){ ?><a href="<?php echo $zakaz_list_item["client_info_url"]; ?>"><?php echo $zakaz_list_item["clients_fio"]; ?></a><?php }else{ ?><?php echo $zakaz_list_item["clients_fio"]; ?><?php } ?></td>
+    <td><?php echo $zakaz_list_item["orders_order_date"]; ?></td>
+    <td><?php echo $zakaz_list_item["orders_order_time"]; ?></td>
+    <td><?php echo $zakaz_list_item["orders_summa"]; ?></td>
+    <td><?php echo $zakaz_list_item["orders_skidka_amount"];?><br></td>
+    <td><?php echo $zakaz_list_item["orders_skidka_office_amount"];?></td>
+    <td><?php echo $zakaz_list_item["orders_itogo_klient"]; ?></td>
+    <td><?php echo $zakaz_list_item["orders_itogo_office"]; ?></td>
+    <td style = "background-color: <?php echo $zakaz_list_item["orders_statuses_color"]; ?>;"><?php echo $zakaz_list_item["orders_statuses_name"]; ?></td>
+    <td><?php echo $zakaz_list_item["torgovye_tochki_name"]; ?></td>
+    <td style="padding: 0;display: inline-block;position: relative"><?php echo $zakaz_list_item["comment"]; ?></td>
+    <?php if( $site_variables["session_var_zakaz_view"] == 1){ ?><td>
 <a href="<?php echo $zakaz_list_item["actions_list"]["order_view"]; ?>">Просмотр<a/><br>
 <?php if( ($zakaz_list_item["orders_hidden"] == 1)){ ?> <a href="#" class = "item_hide restore" >Восстановить<a/> <?php }else{ ?> <a href="#" class = "item_hide">Удалить<a/><?php } ?>
 </td><?php } ?>
@@ -214,14 +219,15 @@ $(".table_sorter").click(function(){
 	
 	switch($(this).text())
 	{
-		case '№': 				sort = 'id'; break;
-		case 'ФИО': 			sort = 'fio';break;
-		case 'Время заказа': 	sort = 'order_date';break;
-		case 'Сумма заказа': 	sort = 'summa';break;
-		case 'Скидка': 			sort = 'skidka_amount';break;
-		case 'К оплате': 		sort = 'summa';break;
-		case 'Статус': 			sort = 'default_status';break;
-		case 'Торговая точка': 	sort = 'torgovaya_tochka_id';break;
+        case '№': 				sort = 'id'; break;
+        case 'ФИО': 			sort = 'fio';break;
+        case 'Дата заказа': 	sort = 'order_date';break;
+        case 'Время заказа': 	sort = 'order_date';break;
+        case 'Сумма заказа': 	sort = 'summa';break;
+        case 'Скидка': 	        sort = 'skidka_amount';break;
+        case 'К оплате':        sort = 'summa';break;
+        case 'Статус': 			sort = 'default_status';break;
+        case 'Торговая точка': 	sort = 'torgovaya_tochka_id';break;
 	}
 	$("#sort_by").val(sort); 
 	

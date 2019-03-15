@@ -9,4 +9,4 @@ $this->delete_item_hide($block_attr_table);
 if(!empty($block_attr_page)){
 $gl_session["session_data"]['system_messages'][$block_attr_page] = "Данные успешно удалены";
 }
-$this->redirect($this->l($block_attr_redirect)); 
+$this->redirect($this->l($block_attr_redirect));
