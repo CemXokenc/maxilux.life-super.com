@@ -1,0 +1,11 @@
+table.main{ background-color:#C0C0C0; }
+td.header{ background-color:#333333; color:#CCC; font-weight:bold; width:50px; padding:5px; }
+td.header_day{ background-color:#333333; color:#CCC; font-weight:bold; width:200px; padding-left:20px; padding-right:20px; }
+td.header_comment{ background-color:#333333; color:#CCC; font-weight:bold; width:400px; padding-left:20px; padding-right:20px; }
+td.header_check{ background-color:#333333; color:#CCC; font-weight:bold; width: 50px; padding:5px; }
+td.header_confirm{ background-color:#333333; color:#CCC; font-weight:bold; width: 50px; padding-left:20px; padding-right:20px; }
+td.row_val{ background-color:#CCC; width:50px; padding:2px; }
+td.row_day{ background-color:#CCC; width:200px; padding-left:10px; padding-right:10px; }
+td.row_comment{}
+td.row_check{}
+td.row_confirm{}

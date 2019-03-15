@@ -1,0 +1,147 @@
+body { 
+
+	background-color:063C62;
+	margin-top:0px;
+	margin-left:0px;
+	margin-bottom:0px;
+	margin-right:0px;
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px
+
+}
+
+.home_normal_text{ 
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	text-align:justify;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:0px;
+	padding-bottom:0px;
+	color: #666666;
+}
+
+
+td.nav_background_redline {
+
+	background-image:url(images/red_line.png);
+	background-repeat:no-repeat;
+	height:5px;
+	width: 909px;
+	padding: 0px 0px 0px 0px;
+
+}
+
+
+.title_text {
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:20px;
+	color: #666666;
+
+
+}
+
+
+.address_text {
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color: #CECECE;
+
+}
+
+
+.practice_left_text {
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #666666;
+
+}
+
+
+
+
+.text {
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #666666;
+	text-align:justify;
+}
+
+
+h1
+ {
+font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+font-size:20px;
+color: #666666;
+margin-bottom:0px;
+}
+
+
+h2 { 
+font-family:Times New Roman; 
+color:#3e3e3e; 
+font-size:1.64em; 
+font-weight:normal;
+}
+
+
+h3 { 
+font-family:Times New Roman; 
+color:#055702; 
+font-size:1.64em; 
+font-weight:normal;
+margin-bottom:1px;
+}
+
+
+A {
+
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #5A5959;
+	TEXT-DECORATION: none
+	
+}
+
+A:hover {
+	font-family: Times New Roman; Georgia, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	letter-spacing: 0.2pt;
+	color: #7D0404;
+	TEXT-DECORATION: underline;
+
+}
+
+
+a.footer_navigation:link {
+	font-family: Verdana,"Trebuchet MS",Arial,Georgia,Arial,  Verdana, Times, serif;
+	font-size:10px;
+	letter-spacing: 0.2pt;
+	color:#999999;
+	TEXT-DECORATION: none
+	}
+
+a.footer_navigation:visited {
+	font-family: Verdana,"Trebuchet MS",Arial,Georgia,Arial,  Verdana, Times, serif;
+	font-size:10px;
+	letter-spacing: 0.2pt;
+	color:#999999;
+	TEXT-DECORATION: none
+	}
+
+
+a.footer_navigation:hover {
+	font-family: Verdana,"Trebuchet MS",Arial,Georgia,Arial, Georgia, Verdana, Times, serif;
+	font-size:10px;
+	letter-spacing: 0.2pt;
+	color: #CCCCCC;
+	TEXT-DECORATION: none
+
+}
+
+
+.copyright{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#999999;
+}
