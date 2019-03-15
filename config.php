@@ -1,12 +1,12 @@
 <?php 
 
- define("cms_url","http://maxilux.life-super.com/");
+ define("cms_url","http://maxilux.life-super.com.loc/");
 
  /* Database Settings */
- define("db_host","localhost");
- define("db_name","maxilux_site");
- define("db_user","maxilux_site");
- define("db_pass","maxilux2014");
+define("db_host","localhost");
+define("db_name","maxilux_site");
+define("db_user","root");
+define("db_pass","");
 
  define("default_action","login");
 
