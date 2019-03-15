@@ -66,10 +66,8 @@
       <td align="left" style="border-bottom:1px solid #cbcbcb;"><strong><?php echo $site_variables["summa_tovarov"]; ?></strong></td></span>
       <td id="summa_td" align="left" style="border-bottom:1px solid #cbcbcb;">
         <span class="summa_zakaza"><?php echo $site_variables["summa_zakaza"]; ?></span>
-    <span id="skidka" style="display:none;">
+    <span id="skidka">
       <br>Скидка Клиента:<span id="skidka_summa"></span>
-      <br>Скидка Офиса:<span id="office_skidka_summa"></span>
-      <br>Доход Офиса:<span id="office_doxod_summa"></span>
     </span>
     <span id="k_oplate"><br>К оплате:<span id="k_oplate_summa"><?php echo $site_variables["summa_zakaza"]; ?></span></span>
       </td>
