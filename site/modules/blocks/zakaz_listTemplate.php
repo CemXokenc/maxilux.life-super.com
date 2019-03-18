@@ -120,7 +120,7 @@
 	<button type="submit" name="reset_filter" value = "1" class="reset_filter btn btn-info">Сбросить фильтр</button>
 	<input name="view_checked" style="margin-left: 20px;" <?php echo $site_variables["area_checked"]; ?> onchange="$('#view_removed').submit();" value="1" type="checkbox">
 	<label for="view_removed">Вывести удаленные?</label>
-    <input name="view_checked_price" style="margin-left: 20px;" <?php echo $site_variables["area_checked"]; ?> onchange="$('#view_removed_price').submit();" value="1" type="checkbox">
+    <input id="view_checked_price" style="margin-left: 20px;" type="checkbox">
     <label for="view_removed_price">Показать дилерскую цену?</label>
 
 	<input type="hidden" name="do" value = "filter2">
@@ -146,9 +146,9 @@
       <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'order_date')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Время заказа</a></th>
       <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Сумма заказа</a></th>
       <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'skidka_amount')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Скидка Клиент</a></th>
-      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'skidka_amount')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Скидка Офис</a></th>
+      <th class="price_office"><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'skidka_amount')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Скидка Офис</a></th>
       <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa_f')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">К оплате Клиент</a></th>
-      <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa_f')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">К оплате Офис</a></th>
+      <th class="price_office"><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'summa_f')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">К оплате Офис</a></th>
       <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'default_status')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Статус</a></th>
       <th><a class = "table_sorter <?php if(($site_variables["active_sort_id"] == 'torgovaya_tochka_id')){ ?>active <?php echo $site_variables["active_sort"]; ?><?php } ?>" href = "#">Торговая точка</a></th>
       <th>Комментарии</th>
@@ -167,9 +167,9 @@
     <td><?php echo $zakaz_list_item["orders_order_time"]; ?></td>
     <td><?php echo $zakaz_list_item["orders_summa"]; ?></td>
     <td><?php echo $zakaz_list_item["orders_skidka_amount"];?><br></td>
-    <td><?php echo $zakaz_list_item["orders_skidka_office_amount"];?></td>
+    <td class="price_office"><?php echo $zakaz_list_item["orders_skidka_office_amount"];?></td>
     <td><?php echo $zakaz_list_item["orders_itogo_klient"]; ?></td>
-    <td><?php echo $zakaz_list_item["orders_itogo_office"]; ?></td>
+    <td class="price_office"><?php echo $zakaz_list_item["orders_itogo_office"]; ?></td>
     <td style = "background-color: <?php echo $zakaz_list_item["orders_statuses_color"]; ?>;"><?php echo $zakaz_list_item["orders_statuses_name"]; ?></td>
     <td><?php echo $zakaz_list_item["torgovye_tochki_name"]; ?></td>
     <td style="padding: 0;display: inline-block;position: relative"><?php echo $zakaz_list_item["comment"]; ?></td>
