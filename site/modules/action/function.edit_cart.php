@@ -8,7 +8,7 @@
  $this->r_v("css_link", $css_link); 
  include(__DIR__."/../blocks/left_menu_mainAction.php"); 
  $block_attr_do="edit_cart";
- include(__DIR__."/../blocks/product_viewAction.php");  
+ include(__DIR__."/../blocks/product_viewAction.php");
 
 
 

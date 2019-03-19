@@ -11,5 +11,5 @@
  </div> <!-- /#content-container -->					
 </div> <!-- #content -->
 
-<?php include(__DIR__."/../blocks/left_menu_mainTemplate.php"); ?>
+<?php //include(__DIR__."/../blocks/left_menu_mainTemplate.php"); ?>
 
