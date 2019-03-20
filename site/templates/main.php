@@ -23,8 +23,8 @@
 	<script src="<?php echo $site_variables["template_dir"]; ?>js/libs/jquery-1.9.1.min.js"></script>
     <script src="<?php echo $site_variables["template_dir"]; ?>js/libs/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="<?php echo $site_variables["template_dir"]; ?>js/libs/bootstrap.min.js"></script>
-    <script src="<?php echo $site_variables["template_dir"]; ?>chosen/prism.js"></script>
-    <script src="<?php echo $site_variables["template_dir"]; ?>chosen/price.js"></script>
+        <script src="<?php echo $site_variables["template_dir"]; ?>chosen/prism.js"></script>
+        <script src="<?php echo $site_variables["template_dir"]; ?>chosen/price.js"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>

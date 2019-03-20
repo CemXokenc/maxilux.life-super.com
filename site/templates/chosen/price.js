@@ -7,6 +7,7 @@ function PopUpHide(){
 $(document).ready(function () {
 
     PopUpHide();
+    $('#edit_button_close').hide();
 
     $('#view_checked_price').on('change', function () {
         if ($('#view_checked_price').prop('checked')) {
@@ -18,10 +19,19 @@ $(document).ready(function () {
 
     $('#edit_button').click(function(){
         PopUpShow();
+        $('#edit_button_close').show();
+        $('#edit_button').hide();
+    });
+
+    $('#edit_button_close').click(function(){
+        PopUpHide();
+        $('#edit_button_close').hide();
+        $('#edit_button').show();
     });
 
     $('#edit_form_popup_submit').click(function(){
         var edit_form_popup_id = $('#edit_form_popup_id').val(),
+            edit_form_popup_order = $('#edit_form_popup_order').val(),
             edit_form_popup_name = $('#edit_form_popup_name').val(),
             edit_form_popup_email = $('#edit_form_popup_email').val(),
             edit_form_popup_telephone = $('#edit_form_popup_telephone').val(),
@@ -38,6 +48,7 @@ $(document).ready(function () {
             url:'/edit.php',
             data:{
                 'id': edit_form_popup_id,
+                'order': edit_form_popup_order,
                 'name': edit_form_popup_name,
                 'email': edit_form_popup_email,
                 'telephone': edit_form_popup_telephone,
