@@ -4,9 +4,32 @@ function PopUpShow(){
 function PopUpHide(){
     $(".edit_button_popup").hide();
 }
+function history(){
+
+    var edit_form_popup_order = $('#edit_form_popup_order').val();
+    var arr = '', i = 1;
+    $.ajax({
+        type:'POST',
+        url:'/edit_statuses.php',
+        dataType:'json',
+        data:{
+            'order': edit_form_popup_order
+        },
+        success:function(res){
+            while(typeof(res[i]) != "undefined" && res[i] !== null){
+                arr += res[i]['author'] + ' - ' + res[i]['date'] + '<br>';
+                i++;
+            }
+            $('#history').html(arr);
+        }
+    });
+
+}
+
 $(document).ready(function () {
 
     PopUpHide();
+    history();
     $('#edit_button_close').hide();
 
     $('#view_checked_price').on('change', function () {
@@ -32,6 +55,7 @@ $(document).ready(function () {
     $('#edit_form_popup_submit').click(function(){
         var edit_form_popup_id = $('#edit_form_popup_id').val(),
             edit_form_popup_order = $('#edit_form_popup_order').val(),
+            edit_form_popup_user = $('#edit_form_popup_user').val(),
             edit_form_popup_name = $('#edit_form_popup_name').val(),
             edit_form_popup_email = $('#edit_form_popup_email').val(),
             edit_form_popup_telephone = $('#edit_form_popup_telephone').val(),
@@ -48,6 +72,7 @@ $(document).ready(function () {
             url:'/edit.php',
             data:{
                 'id': edit_form_popup_id,
+                'user': edit_form_popup_user,
                 'order': edit_form_popup_order,
                 'name': edit_form_popup_name,
                 'email': edit_form_popup_email,
@@ -72,6 +97,7 @@ $(document).ready(function () {
                 $('#form_dostavka_adress').html(edit_form_popup_dostavka_adress);
                 $('#form_dostavka_telephone').html(edit_form_popup_dostavka_telephone);
                 PopUpHide();
+                history();
             }
         });
     });

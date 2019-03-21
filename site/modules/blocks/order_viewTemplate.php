@@ -25,12 +25,13 @@
 			<b>Почтовый индекс:</b><span id='form_dostavka_index'><?php echo $site_variables["order"]["city"]; ?></span><br>
 			<b>Адрес:</b><span id='form_dostavka_adress'><?php echo $site_variables["order"]["zip_code"]; ?></span><br>
 			<b>Телефон:</b><span id='form_dostavka_telephone'><?php echo $site_variables["order"]["adress"]; ?></span>
-            <div id="map"></div>
         </td>
 		<td style = "vertical-align: top; width: 20%;">
 			<b><?php echo $site_variables["manager_db"]["first_name"]; ?> <?php echo $site_variables["manager_db"]["last_name"]; ?></b><br>
 			<?php echo $site_variables["manager_db"]["name"]; ?><br>
-			<b>Время заказа:</b> <?php echo $site_variables["order"]["order_date"]; ?>
+			<b>Время заказа:</b> <?php echo $site_variables["order"]["order_date"]; ?><br>
+            <b>История изменений:</b><br>
+            <span id="history"></span>
 		</td>
 	</tr>
   </tbody>
@@ -60,6 +61,7 @@
             <td style = "vertical-align: top; width: 30%;">
                 <input id="edit_form_popup_id" type="hidden" value="<?php echo $site_variables["client_db"]['id'];?>">
                 <input id="edit_form_popup_order" type="hidden" value="<?php echo $site_variables["order"]["nomer"];?>">
+                <input id="edit_form_popup_user" type="hidden" value="<?php echo $site_variables['session_var_user_name'];?>">
                 <b>ФИО:</b><input id='edit_form_popup_name' class='edit_input' value='<?php echo $site_variables["client_db"]["fio"]; ?>'><br>
                 <b>Email:</b><input id='edit_form_popup_email' class='edit_input' value='<?php echo $site_variables["client_db"]["email"]; ?>'><br>
                 <b>Телефон 1:</b><input id='edit_form_popup_telephone' class='edit_input' value='<?php echo $site_variables["client_db"]["telephone"]; ?>'><br>
