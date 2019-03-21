@@ -1,7 +1,7 @@
 .price_office{
     display: none;
 }
-.edit_input{
+.edit_input, .download{
     margin: 5px;
     padding: 2px;
 }
@@ -13,4 +13,8 @@
     background-color: #c5c5c5;
     border-radius:5px;
     box-shadow: 0px 0px 10px #000;
+}
+#file_download{
+    display: inline;
+    margin-left: 20px;
 }

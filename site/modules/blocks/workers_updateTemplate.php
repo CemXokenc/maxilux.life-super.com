@@ -2,9 +2,9 @@
 <div class="fileupload fileupload-new" data-provides="fileupload">
   <div class="fileupload-new thumbnail" style="width: 180px; height: 180px;"><img src="<?php echo $site_variables["template_dir"]; ?>/img/worker/<?php if( $site_variables["workers_update_data"]["img"] > 0){ ?><?php echo $site_variables["workers_update_data"]["id"]; ?><?php }else{ ?>no_img<?php } ?>.jpg"></div>
 </div>
-  <div class='form_item '>
+  <div class='form_item '>id_workers_img
    <label for='workers_img'>Изображение</label>
-   <input type='file' id='id_workers_img' name='workers_img' />
+   <input type='file' id='' name='workers_img' />
   </div>
 
   <div class='form_item '>

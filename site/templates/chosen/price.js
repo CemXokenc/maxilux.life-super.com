@@ -26,10 +26,40 @@ function history(){
 
 }
 
+function files(){
+
+    var order_id = $('#edit_form_popup_order').val();
+    var res = '';
+    $.ajax({
+        url: '/images.php',
+        data: {'order_id': order_id},
+        dataType: 'json',
+        type: 'post',
+        success: function (data) {
+            var i = 2;
+            var l = data.length;
+            var path = '';
+            var ext = '';
+            for(i;i<l;i++){
+                ext = data[i].split('.');
+                path = '/site/templates/img/orders/' + order_id + '/' + data[i];
+                if ((ext[1] == 'jpg') || (ext[1] == 'png') || (ext[1] == 'bmp')){
+                    res += "<a target='_blank' href='" + path + "'><img style='width:180px;height:180px;' src='" + path + "'></a>";
+                }else{
+                    res += "<a target='_blank' href='" + path + "'>" + data[i] + "</a>";
+                }
+            }
+            $('#order_files').html(res);
+        }
+    });
+
+}
+
 $(document).ready(function () {
 
     PopUpHide();
     history();
+    files();
     $('#edit_button_close').hide();
 
     $('#view_checked_price').on('change', function () {
@@ -100,6 +130,27 @@ $(document).ready(function () {
                 history();
             }
         });
+    });
+
+    $('#download').on('click', function(){
+
+        var file_data = $('#file_download').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        $.ajax({
+            url: '/download.php',
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function (data) {
+                console.log(data);
+                files();
+            }
+        });
+
     });
 
 });

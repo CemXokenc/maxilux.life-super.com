@@ -165,14 +165,13 @@
     <option <?php if( $site_variables["order"]["default_status"] == $site_variables["status"]["id"]){ ?>selected<?php } ?> value="<?php echo $site_variables["status"]["id"]; ?>"><?php echo $site_variables["status"]["name"]; ?></option>
     <?php } ?>
   </select>
-  <button class="btn btn-success" id="btn_update">Применить</button>
-    <div>
-        <label>Загрузить фото</label>
-        <input type='file'/>
+    <button class="btn btn-success" id="btn_update">Применить</button><br>
+    <div id="order_files">
     </div>
-    <div>
-        <label>Загрузить файл</label>
-        <input type='file'/>
+    <div class="download">
+        <label>Загрузить фото/файл</label>
+        <input id='file_download' type='file'/>
+        <button id="download" class="download">Загрузить</button>
     </div>
 </div>
 <?php } ?>
