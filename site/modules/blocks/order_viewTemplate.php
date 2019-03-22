@@ -37,7 +37,7 @@
   </tbody>
 </table>
 
-<button id='edit_button' style="margin:10px">Редактировать</button>
+<button id='edit_button' style="margin:10px">   Редактировать</button>
 <button id='edit_button_close' style="margin:10px">Закрыть</button>
 <input id="view_checked_price" style="margin-left: 20px;" type="checkbox">
 <label for="view_removed_price">Показать дилерскую цену?</label>
@@ -119,9 +119,11 @@
       <?php }else{ ?><?php echo $site_variables["product_order"]["name"]; ?>
       <?php } ?>
       <?php if( $site_variables["session_var_zakaz_update"] == "1"){ ?>
+          <?php ?>
       <?php //if( $site_variables["product_order"]["edit_product_url"] != "" && $site_variables["product_order"]["category_status"] == 0){ ?>
-              <br/><a href="<?php echo $site_variables["product_order"]["edit_product_url"]; ?>">редактировать</a>
-          <?php //} ?>
+          <?php if($site_variables["stateses"][0]['name'] != 'Продана с выставки'){?>
+          <br/><a href="<?php echo $site_variables["product_order"]["edit_product_url"]; ?>">редактировать</a>
+          <?php } ?>
       <?php } ?>
     </td>
     <td><?php echo $site_variables["product_order"]["kolichestvo"]; ?></td>

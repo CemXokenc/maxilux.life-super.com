@@ -18,3 +18,11 @@
     display: inline;
     margin-left: 20px;
 }
+#order_files{
+    margin: 20px;
+}
+#order_files a img{
+    width:320px;
+    height:180px;
+    margin: 10px;
+}

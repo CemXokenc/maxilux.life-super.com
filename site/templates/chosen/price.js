@@ -44,7 +44,7 @@ function files(){
                 ext = data[i].split('.');
                 path = '/site/templates/img/orders/' + order_id + '/' + data[i];
                 if ((ext[1] == 'jpg') || (ext[1] == 'png') || (ext[1] == 'bmp')){
-                    res += "<a target='_blank' href='" + path + "'><img style='width:180px;height:180px;' src='" + path + "'></a>";
+                    res += "<a target='_blank' href='" + path + "'><img src='" + path + "'></a>";
                 }else{
                     res += "<a target='_blank' href='" + path + "'>" + data[i] + "</a>";
                 }
@@ -145,8 +145,7 @@ $(document).ready(function () {
             processData: false,
             data: form_data,
             type: 'post',
-            success: function (data) {
-                console.log(data);
+            success: function () {
                 files();
             }
         });
